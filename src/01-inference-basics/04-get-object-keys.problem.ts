@@ -10,8 +10,8 @@ const testingFrameworks = {
   mocha: {
     label: "Mocha",
   },
-};
+} as const;
 
-type TestingFramework = unknown;
+type TestingFramework = keyof typeof testingFrameworks;
 
 type tests = [Expect<Equal<TestingFramework, "vitest" | "jest" | "mocha">>];
